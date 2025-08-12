@@ -1,3 +1,4 @@
+
 name: Development build
 
 on:
@@ -138,7 +139,6 @@ jobs:
             # Build ipa only for everything else
             gmake -j$(sysctl -n hw.ncpu) dsym package PLATFORM=${{ matrix.platform }}
           fi
-
       - name: Upload regular ipa
         uses: actions/upload-artifact@main
         with:
